@@ -354,7 +354,7 @@
     const face = p.side < 0 ? p.x + PADDLE_W : p.x;
     let threat = null, tMin = Infinity;
     for (const b of game.balls) {
-      if (Math.sign(b.vx) !== -p.side) continue; // balle qui vient vers cette raquette
+      if (Math.sign(b.vx) !== p.side) continue; // balle qui vient vers cette raquette
       const t = (face - b.x) / b.vx;
       if (t >= 0 && t < tMin) { tMin = t; threat = b; }
     }
